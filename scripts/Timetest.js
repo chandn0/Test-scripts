@@ -1,4 +1,5 @@
 const { ethers } = require('hardhat');
+const hre = require("hardhat");
 
 // Deploy function
 async function Timetest() {
@@ -6,13 +7,26 @@ async function Timetest() {
     deployerAddress = account.address;
     console.log(`Deploying contracts using ${deployerAddress}`);
     console.time();
-    for (let i = 0; i < 10; i++) {
-        const token = await ethers.getContractFactory('MyToken');
-        const tokenInstance = await token.deploy(
-        );
-        await tokenInstance.deployed();
-    }
-    console.log("Time taken to deploy 10 smart contract on Goerli  in  milliseconds");
+
+    const token = await ethers.getContractFactory('MyToken');
+    const tokenInstance = await token.deploy(
+    );
+    await tokenInstance.deployed();
+    console.log(`Contract deployed at ${tokenInstance.address}`);
+    // await run(`verify:verify`, {
+    //     address: tokenInstance.address,
+    // });
+
+    // await hre.tenderly.persistArtifacts({
+    //     name: "MyToken",
+    //     address: tokenInstance.address
+    // });
+
+    // await hre.tenderly.verify({
+    //     name: "MyToken",
+    //     address: tokenInstance.address,
+    // })
+
     console.timeEnd();
 }
 

@@ -1,7 +1,7 @@
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-
+// require("@tenderly/hardhat-tenderly");
 require('@nomiclabs/hardhat-ethers');
 require('@nomiclabs/hardhat-etherscan');
 require("@nomiclabs/hardhat-vyper");
@@ -11,10 +11,15 @@ require("@nomiclabs/hardhat-vyper");
 
 
 module.exports = {
-  defaultNetwork: "buildbear",
-  vyper: {
-    compilers: [{ version: "0.2.11" }, { version: "0.3.7" }],
+  defaultNetwork: "nameless",
+  // vyper: {
+  //   compilers: [{ version: "0.2.11" }, { version: "0.3.7" }],
+  // },
+  tenderly: {
+    username: "0xchandan",
+    project: "project"
   },
+
   networks: {
     localhost: {
       url: "http://0.0.0.0:8545/",
@@ -27,9 +32,21 @@ module.exports = {
       accounts: [`89e99b46c6fc6f6c51877defc4bc5f4d0892d56fd855eec91c07659c1817bf50`],
     },
     buildbear: {
-      url: "https://rpc.dev.buildbear.io/desperate-wicket-systri-warrick-451d83a0",
+      url: "https://rpc.dev.buildbear.io/redundant-luminara-unduli-26bd3331",
       // accounts: [`89e99b46c6fc6f6c51877defc4bc5f4d0892d56fd855eec91c07659c1817bf50`],
     },
+    tenderly: {
+      url: "https://rpc.tenderly.co/fork/4c79ca40-e3e5-49b6-8037-cda933f661fd",
+    },
+    phalcon: {
+      url: "https://rpc.phalcon.xyz/ecfa1730790d473aa0f84abbca9cbd9e",
+    },
+    conduit: {
+      url: "https://rpc-regulatory-coffee-woodpecker-z121e7ud5v.t.conduit.xyz",
+    },
+    nameless: {
+      url: "https://7a0e92c1-5a94-4565-abed-02baa5c6573d.ethereum.nameless.io",
+    }
 
   },
   solidity: {
@@ -103,14 +120,23 @@ module.exports = {
   etherscan: {
     apiKey: {
       buildbear: "verifyContract",
+      phalcon: "59c47ae3-eb72-49d7-974e-fe04c9a901f3",
     },
     customChains: [
       {
         network: "buildbear",
         chainId: 11155111,
         urls: {
-          apiURL: "https://rpc.dev.buildbear.io/verify/etherscan/desperate-wicket-systri-warrick-451d83a0",
-          browserURL: "https://explorer.dev.buildbear.io/desperate-wicket-systri-warrick-451d83a0",
+          apiURL: "https://rpc.dev.buildbear.io/verify/etherscan/redundant-luminara-unduli-26bd3331",
+          browserURL: "https://explorer.dev.buildbear.io/redundant-luminara-unduli-26bd3331",
+        },
+      },
+      {
+        network: "phalcon",
+        chainId: 1,
+        urls: {
+          apiURL: "https://alp.phalcon.xyz/59c47ae3-eb72-49d7-974e-fe04c9a901f3/ecfa1730790d473aa0f84abbca9cbd9e",
+          browserURL: "https://etherscan.io/"
         },
       },
     ],

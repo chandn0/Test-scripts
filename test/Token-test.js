@@ -2,7 +2,7 @@ const { expect } = require("chai");
 const { ethers } = require("hardhat");
 require("@nomicfoundation/hardhat-chai-matchers")
 
-describe("Token contract", function () {
+describe.only("Token contract", function () {
     let Token;
     let token;
     let owner;
