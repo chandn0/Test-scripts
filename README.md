@@ -16,3 +16,4 @@
 
 ### To run all the TestScripts, use the command `npx hardhat test`.
 
+npx hardhat node --fork https://frequent-side-thunder.discover.quiknode.pro/ffde0aa54333bbbc2c89a2d55c28ddf3d48b0219/
