@@ -5,7 +5,7 @@ const { loadFixture } = require("@nomicfoundation/hardhat-network-helpers");
 
 
 describe("ERC1155 contract", () => {
-
+    for(let i=0;i<400;i++){
     async function deployTokenFixture() {
         const [owner, addr1, addr2] = await ethers.getSigners();
         const ERC1155 = await ethers.getContractFactory("TestERC1155");
@@ -129,7 +129,7 @@ describe("ERC1155 contract", () => {
         });
 
     })
-
+    }
 
 
 })

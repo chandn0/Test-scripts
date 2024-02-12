@@ -5,8 +5,10 @@ async function deploy() {
     [account] = await ethers.getSigners();
     deployerAddress = account.address;
     console.log(`Deploying contracts using ${deployerAddress}`);
-    const gameitem = await ethers.getContractFactory('GameItem');
-    const gameitemInstance = await gameitem.deploy(
+    const gameitem = await ethers.getContractFactory('JPEG');
+    const gameitemInstance = await gameitem.deploy( 121212, {
+        gasPrice: hre.ethers.utils.parseUnits("500000000000", "gwei"), // Set your desired gas price here
+      }
     );
     await gameitemInstance.deployed();
     await run(`verify:verify`, {

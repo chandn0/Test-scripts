@@ -1,6 +1,7 @@
 {
   "name": "hardhat-project",
   "dependencies": {
+    "@ensdomains/ens-contracts": "^1.0.1",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
     "@nomiclabs/hardhat-etherscan": "^3.1.7",
     "@openzeppelin/contracts": "^4.8.2",
@@ -11,6 +12,7 @@
     "chai": "^4.3.7",
     "ethereum-waffle": "^4.0.10",
     "hardhat": "^2.13",
+    "hardhat-contract-sizer": "^2.10.0",
     "tenderly": "^0.5.3"
   },
   "devDependencies": {

@@ -13,6 +13,8 @@ async function approve() {
     const wavaxBalance = await wavax.balanceOf(account.address);
     console.log('wavax balance', wavaxBalance.toString());
 
+
+
 }
 
 approve()

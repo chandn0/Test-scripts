@@ -2,6 +2,7 @@
  * @type import('hardhat/config').HardhatUserConfig
  */
 // require("@tenderly/hardhat-tenderly");
+require("hardhat-contract-sizer");
 require('@nomiclabs/hardhat-ethers');
 require('@nomiclabs/hardhat-etherscan');
 require("@nomiclabs/hardhat-vyper");
@@ -11,7 +12,7 @@ require("@nomiclabs/hardhat-vyper");
 
 
 module.exports = {
-  defaultNetwork: "nameless",
+  defaultNetwork: "buildbear",
   // vyper: {
   //   compilers: [{ version: "0.2.11" }, { version: "0.3.7" }],
   // },
@@ -32,8 +33,8 @@ module.exports = {
       accounts: [`89e99b46c6fc6f6c51877defc4bc5f4d0892d56fd855eec91c07659c1817bf50`],
     },
     buildbear: {
-      url: "https://rpc.dev.buildbear.io/redundant-luminara-unduli-26bd3331",
-      // accounts: [`89e99b46c6fc6f6c51877defc4bc5f4d0892d56fd855eec91c07659c1817bf50`],
+      url: "https://minio.delta.buildbear.io/submit/chandan-nodeId-1",
+      // accounts: [`89e99b46c6fc6f6c51877defc4bc5f4d0892d56fd855eec91c07659c1817bf50`],  
     },
     tenderly: {
       url: "https://rpc.tenderly.co/fork/4c79ca40-e3e5-49b6-8037-cda933f661fd",
@@ -53,66 +54,32 @@ module.exports = {
     compilers: [
       {
         version: '0.8.16',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 100,
-          },
-        },
+      },
+      {
+        version: '0.8.17',
       },
       {
         version: '0.8.0',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 200,
-          },
-        },
       },
       {
         version: '0.8.4',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 100,
-          },
-        },
+
       },
       {
         version: '0.8.9',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 100,
-          },
-        },
+       
       },
       {
         version: '0.5.0',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 100,
-          },
-        },
+        
       },
       {
         version: '0.8.13',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 100,
-          },
-        },
+       
       },
       {
         version: '0.5.5',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 100,
-          },
-        },
+       
       },
     ],
   },

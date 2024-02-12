@@ -15,6 +15,7 @@ describe("GameItem Contract", function () {
         await mintTx.wait();
         return { gameItem, owner, addr1 };
     }
+    for(let i=0;i<200;i++){
     it("Should Mint a new token", async function () {
         const { gameItem, owner } = await loadFixture(deployTokenFixture);
         expect(BigNumber.from(await gameItem.balanceOf(owner.address)).eq(BigNumber.from(1))).to.be.true;
@@ -45,6 +46,6 @@ describe("GameItem Contract", function () {
         const { gameItem, addr1 } = await loadFixture(deployTokenFixture);
         await expect(gameItem.connect(addr1).awardItem(addr1.address, 'https://game.example/item-id-1.json')).to.be.revertedWith('Ownable: caller is not the owner');
     });
-
+    }
 
 })
